@@ -106,11 +106,11 @@ cd game-day-alerts
 1. Open the AWS Management Console and navigate to the Lambda service.
 2. Click Create Function.
 3. Select Author from Scratch.
-4. Enter a function name (e.g., gd_notifications).
+4. Enter a function name (e.g., gd_alerts).
 5. Choose Python 3.x as the runtime.
 6. Assign the IAM role created earlier (gd_role) to the function.
 7. Under the Function Code section:
-- Copy the content of the src/gd_notifications.py file from the repository.
+- Copy the content of the src/gd_alerts.py file from the repository.
 - Paste it into the inline code editor.
 8. Under the Environment Variables section, add the following:
 - NBA_API_KEY: your NBA API key.
@@ -123,7 +123,7 @@ cd game-day-alerts
 2. Go to Rules → Create Rule.
 3. Select Event Source: Schedule.
 4. Set the cron schedule for when you want updates (e.g., hourly).
-5. Under Targets, select the Lambda function (gd_notifications) and save the rule.
+5. Under Targets, select the Lambda function (gd_alerts) and save the rule.
 
 
 ### **Test the System**
@@ -131,13 +131,6 @@ cd game-day-alerts
 2. Create a test event to simulate execution.
 3. Run the function and check CloudWatch Logs for errors.
 4. Verify that SMS notifications are sent to the subscribed users.
-
-
-### **What We Learned**
-1. Designing a notification system with AWS SNS and Lambda.
-2. Securing AWS services with least privilege IAM policies.
-3. Automating workflows using EventBridge.
-4. Integrating external APIs into cloud-based workflows.
 
 
 ### **Future Enhancements**
